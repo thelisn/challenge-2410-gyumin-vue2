@@ -7,11 +7,15 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     data: [],
+    renderData: []
   },
 
   mutations: {
     setData(state, data) {
       state.data = data;
+    },
+    setRenderData(state, data) {
+      state.renderData = data;
     }
   },
 
@@ -19,6 +23,7 @@ export default new Vuex.Store({
     getData(context) {
       axios.get(import.meta.env.VITE_DB_URL).then((response) => {
         context.commit("setData", response.data);
+        context.commit("setRenderData", response.data);
       });
     },
   },

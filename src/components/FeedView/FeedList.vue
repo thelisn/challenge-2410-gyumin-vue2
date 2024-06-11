@@ -1,6 +1,6 @@
 <template>
   <ul>
-    <FeedItem v-for="data in storeData" :key="data.id" :postData="data" />
+    <FeedItem v-for="data in renderData" :key="data.id" :postData="data" />
   </ul>
 </template>
 
@@ -13,8 +13,8 @@ export default {
     FeedItem,
   },
   computed: {
-    storeData() {
-      return this.$store.state.data;
+    renderData() {
+      return this.$store.state.renderData;
     },
   },
   beforeMount() {
