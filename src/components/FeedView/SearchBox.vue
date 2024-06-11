@@ -28,8 +28,8 @@
     </div>
 
     <div class="searchbox-button">
-      <AppButton :onClick="handleClickSearch">검색</AppButton>
-      <AppButton :onClick="handleClickReset">초기화</AppButton>
+      <AppButton @onClick="handleClickSearch">검색</AppButton>
+      <AppButton @onClick="handleClickReset">초기화</AppButton>
     </div>
   </div>
 </template>
@@ -44,15 +44,11 @@ export default {
     AppInput,
     AppButton,
   },
-  data() {
-    return {
-      data: this.$store.state.data,
-    };
-  },
   methods: {
     handleClickSearch() {
-      const searchTerm = this.$refs.search_title.$refs.inputRef.value
-      const filteredData = this.data.filter((post) => post.title.includes(searchTerm));
+      const searchTerm = this.$refs.search_title.$refs.inputRef.value;
+
+      const filteredData = this.$store.state.data.filter((post) => post.title.includes(searchTerm));
 
       this.$store.commit("setRenderData", filteredData);
     },

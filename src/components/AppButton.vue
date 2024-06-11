@@ -1,5 +1,5 @@
 <template>
-  <button :type="type" :class="['button', className]" :onClick="onClick" @click="handleClick" >
+  <button :type="type" :class="['button', className]" @click="handleClickEvent">
     <slot></slot>
   </button>
 </template>
@@ -13,14 +13,10 @@ export default {
       default: "button",
     },
     className: String,
-    onClick: Function,
-    // onSubmit: Function,
   },
   methods: {
-    handleClick: function () {
-      if (this.onClick) {
-        this.onClick();
-      }
+    handleClickEvent() {
+      this.$emit("onClick");
     },
   },
 };
