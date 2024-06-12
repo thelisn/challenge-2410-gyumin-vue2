@@ -8,7 +8,8 @@
       :type="type"
       :placeholder="placeholder"
       :role="role"
-      :ref="'inputRef'"
+      :value="value"
+      @input="$emit('input', $event.target.value)"
     />
   </div>
 </template>
@@ -19,6 +20,7 @@ export default {
   props: {
     // label props
     label: String,
+    // todo: hiddenLabel 타입 경고 발생하는 문제 수정할 것
     hiddenLabel: {
       type: Boolean,
       default: false,
@@ -35,6 +37,7 @@ export default {
       type: String,
       default: "input",
     },
+    value: String,
   },
 };
 </script>
