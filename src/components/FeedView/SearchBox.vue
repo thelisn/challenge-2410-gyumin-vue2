@@ -1,37 +1,39 @@
 <template>
   <div>
     <AppInput
-      :id="'search-title'"
-      :label="'제목 검색'"
-      :role="'searchbox'"
-      :placeholder="'검색어를 입력하새요.'"
-      :ref="'search_title'"
+      label="제목 검색"
+      role="searchbox"
+      id="search-title"
+      placeholder="검색어를 입력하세요."
+      v-model="searchTerm"
     />
+
     <div class="searchbox-date">
       <span>날짜 검색</span>
       <div class="searchbox-date-inputs">
         <AppInput
-          :type="'date'"
-          :id="'search-date-start'"
-          :label="'날짜 검색 시작 범위'"
-          :role="'searchbox'"
-          :placeholder="'날짜 검색 시작 범위'"
-          :hiddenLabel="true"
+          label="날짜 검색 시작 범위"
+          labelClass="a11y-hidden"
+          type="date"
+          role="searchbox"
+          id="search-date-start"
+          v-model="startDate"
         />
+
         <AppInput
-          :type="'date'"
-          :id="'search-date-end'"
-          :label="'날짜 검색 종료 범위'"
-          :role="'searchbox'"
-          :placeholder="'날짜 검색 종료 범위'"
-          :hiddenLabel="true"
+          label="날짜 검색 종료 범위"
+          labelClass="a11y-hidden"
+          type="date"
+          role="searchbox"
+          id="search-date-end"
+          v-model="endDate"
         />
       </div>
     </div>
 
     <div class="searchbox-button">
-      <AppButton @onClick="handleClickSearch">검색</AppButton>
-      <AppButton @onClick="handleClickReset">초기화</AppButton>
+      <AppButton @click="handleClickSearch">검색</AppButton>
+      <AppButton @click="handleClickReset">초기화</AppButton>
     </div>
   </div>
 </template>
@@ -46,16 +48,60 @@ export default {
     AppInput,
     AppButton,
   },
-  methods: {
-    handleClickSearch() {
-      const searchTerm = this.$refs.search_title.$refs.inputRef.value;
 
-      const filteredData = this.$store.state.data.filter((post) => post.title.includes(searchTerm));
+  data() {
+    return {
+      searchTerm: "",
+      startDate: "",
+      endDate: "",
+    };
+  },
+
+  methods: {
+    filteredByTitle(data) {
+      if (this.searchTerm) {
+        return data.filter((post) => post.title.includes(this.searchTerm));
+      }
+
+      return data;
+    },
+
+    filteredByStartDate(data) {
+      if (this.startDate) {
+        return data.filter(
+          (post) => new Date(post.date) >= new Date(this.startDate)
+        );
+      }
+
+      return data;
+    },
+
+    filteredByEndDate(data) {
+      if (this.endDate) {
+        return data.filter(
+          (post) => new Date(post.date) <= new Date(this.endDate)
+        );
+      }
+
+      return data;
+    },
+
+    handleClickSearch() {
+      let filteredData = this.$store.state.data;
+
+      filteredData = this.filteredByTitle(filteredData);
+      filteredData = this.filteredByStartDate(filteredData);
+      filteredData = this.filteredByEndDate(filteredData);
 
       this.$store.commit("setRenderData", filteredData);
     },
+
     handleClickReset() {
       this.$store.commit("setRenderData", this.$store.state.data);
+
+      this.searchTerm = "";
+      this.startDate = "";
+      this.endDate = "";
     },
   },
 };

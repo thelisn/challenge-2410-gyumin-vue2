@@ -1,40 +1,32 @@
 <template>
   <div>
-    <label :for="id" :class="labelClass">
+    <label :for="id">
       {{ label }}
     </label>
 
-    <input
-      :type="type"
-      :role="role"
+    <textarea
       :id="id"
-      :class="inputClass"
       :placeholder="placeholder"
+      :role="role"
       :value="value"
       @input="$emit('input', $event.target.value)"
-    />
+    ></textarea>
   </div>
 </template>
 
 <script>
 export default {
-  name: "AppInput",
+  name: "AppTextarea",
 
   props: {
     // label props
     label: String,
-    labelClass: String,
-    // input props
-    type: {
-      type: String,
-      default: "text",
-    },
+    // textarea props
     role: {
       type: String,
       default: "input",
     },
     id: String,
-    inputClass: String,
     placeholder: String,
     value: String,
   },
