@@ -15,16 +15,16 @@
           :id="'search-date-start'"
           :label="'날짜 검색 시작 범위'"
           :role="'searchbox'"
-          :placeholder="'날짜 검색 시작 범위'"
           :hiddenLabel="true"
+          :ref="'search_date_start'"
         />
         <AppInput
           :type="'date'"
           :id="'search-date-end'"
           :label="'날짜 검색 종료 범위'"
           :role="'searchbox'"
-          :placeholder="'날짜 검색 종료 범위'"
           :hiddenLabel="true"
+          :ref="'search_date_end'"
         />
       </div>
     </div>
@@ -47,15 +47,54 @@ export default {
     AppButton,
   },
   methods: {
-    handleClickSearch() {
+    filteredByTitle(data) {
       const searchTerm = this.$refs.search_title.$refs.inputRef.value;
 
-      const filteredData = this.$store.state.data.filter((post) => post.title.includes(searchTerm));
+      if (searchTerm) {
+        return data.filter((post) => post.title.includes(searchTerm));
+      }
+
+      return data;
+    },
+
+    filteredByStartDate(data) {
+      const startDate = this.$refs.search_date_start.$refs.inputRef.value;
+
+      if (startDate) {
+        return data.filter(
+          (post) => new Date(post.date) >= new Date(startDate)
+        );
+      }
+
+      return data;
+    },
+
+    filteredByEndDate(data) {
+      const endDate = this.$refs.search_date_end.$refs.inputRef.value;
+
+      if (endDate) {
+        return data.filter((post) => new Date(post.date) <= new Date(endDate));
+      }
+
+      return data;
+    },
+
+    handleClickSearch() {
+      let filteredData = this.$store.state.data;
+
+      filteredData = this.filteredByTitle(filteredData);
+      filteredData = this.filteredByStartDate(filteredData);
+      filteredData = this.filteredByEndDate(filteredData);
 
       this.$store.commit("setRenderData", filteredData);
     },
+
     handleClickReset() {
       this.$store.commit("setRenderData", this.$store.state.data);
+
+      this.$refs.search_title.$refs.inputRef.value = "";
+      this.$refs.search_date_start.$refs.inputRef.value = "";
+      this.$refs.search_date_end.$refs.inputRef.value = "";
     },
   },
 };
