@@ -1,7 +1,7 @@
 <template>
   <button
-    :type="type"
-    :class="['button', className]"
+    :type="type" 
+    :class="className" 
     @click="handleClickEvent"
   >
     <slot></slot>
@@ -11,6 +11,7 @@
 <script>
 export default {
   name: "AppButton",
+  
   props: {
     type: {
       type: String,
@@ -18,6 +19,7 @@ export default {
     },
     className: String,
   },
+
   methods: {
     handleClickEvent() {
       this.$emit("onClick");

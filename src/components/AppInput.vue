@@ -1,13 +1,15 @@
 <template>
   <div>
-    <label :for="id" :class="hiddenLabel && 'a11y-hidden'">
+    <label :for="id" :class="labelClass">
       {{ label }}
     </label>
+
     <input
-      :id="id"
       :type="type"
-      :placeholder="placeholder"
       :role="role"
+      :id="id"
+      :class="inputClass"
+      :placeholder="placeholder"
       :value="value"
       @input="$emit('input', $event.target.value)"
     />
@@ -17,26 +19,23 @@
 <script>
 export default {
   name: "AppInput",
+
   props: {
     // label props
     label: String,
-    // todo: hiddenLabel 타입 경고 발생하는 문제 수정할 것
-    hiddenLabel: {
-      type: Boolean,
-      default: false,
-    },
-
+    labelClass: String,
     // input props
     type: {
       type: String,
       default: "text",
     },
-    id: String,
-    placeholder: String,
     role: {
       type: String,
       default: "input",
     },
+    id: String,
+    inputClass: String,
+    placeholder: String,
     value: String,
   },
 };
