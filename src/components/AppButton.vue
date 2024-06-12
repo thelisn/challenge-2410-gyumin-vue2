@@ -22,7 +22,7 @@ export default {
 
   methods: {
     handleClickEvent() {
-      this.$emit("onClick");
+      this.$emit("click");
     },
   },
 };

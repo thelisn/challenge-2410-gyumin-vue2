@@ -32,8 +32,8 @@
     </div>
 
     <div class="searchbox-button">
-      <AppButton @onClick="handleClickSearch">검색</AppButton>
-      <AppButton @onClick="handleClickReset">초기화</AppButton>
+      <AppButton @click="handleClickSearch">검색</AppButton>
+      <AppButton @click="handleClickReset">초기화</AppButton>
     </div>
   </div>
 </template>
