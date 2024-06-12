@@ -1,5 +1,9 @@
 <template>
-  <button :type="type" :class="['button', className]" @click="handleClickEvent">
+  <button
+    :type="type"
+    :class="['button', className]"
+    @click="handleClickEvent"
+  >
     <slot></slot>
   </button>
 </template>

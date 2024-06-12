@@ -14,3 +14,10 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+p {
+  overflow-wrap: break-word;
+  white-space: pre-line;
+}
+</style>

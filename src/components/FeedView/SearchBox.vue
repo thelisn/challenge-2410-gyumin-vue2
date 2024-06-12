@@ -3,9 +3,9 @@
     <AppInput
       :id="'search-title'"
       :label="'제목 검색'"
-      role="searchbox"
-      placeholder="검색어를 입력하새요."
-      ref="search_title"
+      :role="'searchbox'"
+      :placeholder="'검색어를 입력하새요.'"
+      :ref="'search_title'"
     />
     <div class="searchbox-date">
       <span>날짜 검색</span>
@@ -15,14 +15,16 @@
           :id="'search-date-start'"
           :label="'날짜 검색 시작 범위'"
           :role="'searchbox'"
-          placeholder="날짜 검색 시작 범위"
+          :placeholder="'날짜 검색 시작 범위'"
+          :hiddenLabel="true"
         />
         <AppInput
           :type="'date'"
           :id="'search-date-end'"
           :label="'날짜 검색 종료 범위'"
           :role="'searchbox'"
-          placeholder="날짜 검색 종료 범위"
+          :placeholder="'날짜 검색 종료 범위'"
+          :hiddenLabel="true"
         />
       </div>
     </div>

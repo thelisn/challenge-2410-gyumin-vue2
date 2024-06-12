@@ -1,6 +1,10 @@
 <template>
   <ul>
-    <FeedItem v-for="data in renderData" :key="data.id" :postData="data" />
+    <FeedItem
+      v-for="data in renderData"
+      :key="data.id"
+      :postData="data"
+    />
   </ul>
 </template>
 
