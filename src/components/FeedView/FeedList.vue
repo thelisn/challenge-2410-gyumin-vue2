@@ -26,3 +26,13 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 16px 4px;
+  bottom: 0;
+}
+</style>

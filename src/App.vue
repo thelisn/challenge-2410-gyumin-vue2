@@ -15,6 +15,10 @@ export default {
 </script>
 
 <style>
+body {
+  background-color: #E0E0E0;
+}
+
 .a11y-hidden {
   position: absolute;
   width: 1px;
