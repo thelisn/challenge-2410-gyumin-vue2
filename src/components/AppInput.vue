@@ -1,7 +1,7 @@
 <template>
   <div>
     <label :for="id" :class="labelClass">
-      {{ label }}
+      {{ labelText }}
     </label>
 
     <input
@@ -11,7 +11,7 @@
       :class="inputClass"
       :placeholder="placeholder"
       :value="value"
-      @input="$emit('input', $event.target.value)"
+      @input="handleInput"
     />
   </div>
 </template>
@@ -22,8 +22,15 @@ export default {
 
   props: {
     // label props
-    label: String,
-    labelClass: String,
+    labelText: {
+      type: String,
+      required: true,
+    },
+    labelClass: {
+      type: String,
+      default: "",
+    },
+
     // input props
     type: {
       type: String,
@@ -33,10 +40,28 @@ export default {
       type: String,
       default: "input",
     },
-    id: String,
-    inputClass: String,
-    placeholder: String,
-    value: String,
+    id: {
+      type: String,
+      required: true,
+    },
+    inputClass: {
+      type: String,
+      default: "",
+    },
+    placeholder: {
+      type: String,
+      default: "",
+    },
+    value: {
+      type: String,
+      default: "",
+    },
+  },
+
+  methods: {
+    handleInput(event) {
+      this.$emit("input", event.target.value);
+    },
   },
 };
 </script>

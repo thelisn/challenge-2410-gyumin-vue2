@@ -1,7 +1,7 @@
 <template>
   <div>
     <AppInput
-      label="제목 검색"
+      labelText="제목 검색"
       role="searchbox"
       id="search-title"
       placeholder="검색어를 입력하세요."
@@ -12,7 +12,7 @@
       <span>날짜 검색</span>
       <div class="searchbox-date-inputs">
         <AppInput
-          label="날짜 검색 시작 범위"
+          labelText="날짜 검색 시작 범위"
           labelClass="a11y-hidden"
           type="date"
           role="searchbox"
@@ -21,7 +21,7 @@
         />
 
         <AppInput
-          label="날짜 검색 종료 범위"
+          labelText="날짜 검색 종료 범위"
           labelClass="a11y-hidden"
           type="date"
           role="searchbox"
