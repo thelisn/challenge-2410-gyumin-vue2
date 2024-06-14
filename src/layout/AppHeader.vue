@@ -7,8 +7,8 @@
 
 <style scoped>
 header {
-  padding-top: 24px;
-  margin: 24px 32px 16px;
+  padding-top: 48px;
+  margin: 0 32px 8px;
   display: flex;
   flex-direction: column;
   gap: 6px;

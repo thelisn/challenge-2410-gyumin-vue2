@@ -8,7 +8,6 @@
       :type="type"
       :role="role"
       :id="id"
-      :class="inputClass"
       :placeholder="placeholder"
       :value="value"
       :max="type === 'date' ? '9999-12-31' : null"
@@ -44,10 +43,6 @@ export default {
     id: {
       type: String,
       required: true,
-    },
-    inputClass: {
-      type: String,
-      default: "",
     },
     placeholder: {
       type: String,

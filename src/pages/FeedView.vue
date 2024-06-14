@@ -15,7 +15,7 @@
 
     <div class="bottom-sticky-container">
       <AppButton class="new-post-button" @click="handleNavigateToWrite">
-        Add new post
+        Add New Post
       </AppButton>
     </div>
   </div>
@@ -56,7 +56,7 @@ export default {
 .open-search-button {
   padding: 8px;
   width: 100%;
-  margin-top: 4px;
+  margin-top: 12px;
   border-radius: 48px;
   border: none;
   background-color: #2196f3;
@@ -72,6 +72,8 @@ export default {
   top: 0;
   width: 100%;
   background-color: #FAFAFA;
+  border-bottom-left-radius: 48px;
+  border-bottom-right-radius: 48px;
 }
 
 .bottom-sticky-container {
@@ -89,6 +91,7 @@ export default {
   text-align: center;
   padding: 20px;
   border-radius: 30px;
+  font-size: 1.25rem;
   font-weight: 600;
   border: none;
   width: 100%;

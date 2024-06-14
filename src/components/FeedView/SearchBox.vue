@@ -1,13 +1,14 @@
 <template>
   <div class="searchbox">
-    <AppInput
-      labelText="제목 검색"
-      labelClass="search-label"
-      role="searchbox"
-      id="search-title"
-      placeholder="검색어를 입력하세요."
-      v-model="searchTerm"
-    />
+    <div class="searchbox-title">
+      <AppInput
+        labelText="제목 검색"
+        role="searchbox"
+        id="search-title"
+        placeholder="검색어를 입력하세요."
+        v-model="searchTerm"
+      />
+    </div>
 
     <div class="searchbox-date">
       <span class="search-label">기간 검색</span>
@@ -106,16 +107,18 @@ export default {
 };
 </script>
 
-<style>
-.search-label {
-  font-size: 0.875rem;
-}
-
+<style scoped>
 .searchbox {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  padding: 4px;
+  padding: 8px;
+  border-bottom: 1px solid #E0E0E0;
+  background-color: #fafafa;
+}
+
+.searchbox-title label {
+  font-size: 0.875rem;
 }
 
 .searchbox-date {
@@ -126,6 +129,7 @@ export default {
 }
 
 .searchbox-date span {
+  font-size: 0.875rem;
   padding-right: 2px;
 }
 
@@ -143,13 +147,13 @@ export default {
 .searchbox-button button {
   padding: 4px 8px;
   border-radius: 6px;
-  border: 1px solid #64B5F6;
+  border: 1px solid #64b5f6;
   background-color: #fff;
   color: #333;
 }
 
 .searchbox-button button:hover {
-  background-color: #2196F3;
+  background-color: #2196f3;
   color: #fff;
   font-weight: 600;
 }

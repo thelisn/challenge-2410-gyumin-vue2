@@ -21,9 +21,8 @@ export default {
 .root-layout {
   background-color: #FAFAFA;
   min-width: 384px;
-  width: 80%;
   max-width: 448px;
-  margin: auto;
+  margin: 0 auto;
   border-radius: 30px;
 }
 </style>
