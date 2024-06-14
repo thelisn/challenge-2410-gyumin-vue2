@@ -1,34 +1,34 @@
 <template>
-  <div>
-    <AppInput
-      label="제목 검색"
-      role="searchbox"
-      id="search-title"
-      placeholder="검색어를 입력하세요."
-      v-model="searchTerm"
-    />
+  <div class="searchbox">
+    <div class="searchbox-title">
+      <AppInput
+        labelText="제목 검색"
+        role="searchbox"
+        id="search-title"
+        placeholder="검색어를 입력하세요."
+        v-model="searchTerm"
+      />
+    </div>
 
     <div class="searchbox-date">
-      <span>날짜 검색</span>
-      <div class="searchbox-date-inputs">
-        <AppInput
-          label="날짜 검색 시작 범위"
-          labelClass="a11y-hidden"
-          type="date"
-          role="searchbox"
-          id="search-date-start"
-          v-model="startDate"
-        />
-
-        <AppInput
-          label="날짜 검색 종료 범위"
-          labelClass="a11y-hidden"
-          type="date"
-          role="searchbox"
-          id="search-date-end"
-          v-model="endDate"
-        />
-      </div>
+      <span class="search-label">기간 검색</span>
+      <AppInput
+        labelText="날짜 검색 시작 범위"
+        labelClass="a11y-hidden"
+        type="date"
+        role="searchbox"
+        id="search-date-start"
+        v-model="startDate"
+      />
+      <span>~</span>
+      <AppInput
+        labelText="날짜 검색 종료 범위"
+        labelClass="a11y-hidden"
+        type="date"
+        role="searchbox"
+        id="search-date-end"
+        v-model="endDate"
+      />
     </div>
 
     <div class="searchbox-button">
@@ -106,3 +106,55 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.searchbox {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px;
+  border-bottom: 1px solid #E0E0E0;
+  background-color: #fafafa;
+}
+
+.searchbox-title label {
+  font-size: 0.875rem;
+}
+
+.searchbox-date {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 1;
+}
+
+.searchbox-date span {
+  font-size: 0.875rem;
+  padding-right: 2px;
+}
+
+.searchbox-date div {
+  flex-grow: 1;
+}
+
+.searchbox-button {
+  display: flex;
+  gap: 6px;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+.searchbox-button button {
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid #64b5f6;
+  background-color: #fff;
+  color: #333;
+}
+
+.searchbox-button button:hover {
+  background-color: #2196f3;
+  color: #fff;
+  font-weight: 600;
+}
+</style>

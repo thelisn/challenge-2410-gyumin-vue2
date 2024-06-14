@@ -1,7 +1,7 @@
 <template>
   <div>
     <label :for="id">
-      {{ label }}
+      {{ labelText }}
     </label>
 
     <textarea
@@ -9,7 +9,7 @@
       :placeholder="placeholder"
       :role="role"
       :value="value"
-      @input="$emit('input', $event.target.value)"
+      @input="handleInput"
     ></textarea>
   </div>
 </template>
@@ -20,15 +20,33 @@ export default {
 
   props: {
     // label props
-    label: String,
+    labelText: {
+      type: String,
+      required: true,
+    },
     // textarea props
     role: {
       type: String,
       default: "input",
     },
-    id: String,
-    placeholder: String,
-    value: String,
+    id: {
+      type: String,
+      required: true,
+    },
+    placeholder: {
+      type: String,
+      default: "",
+    },
+    value: {
+      type: String,
+      default: "",
+    },
+  },
+
+  methods: {
+    handleInput(event) {
+      this.$emit("input", event.target.value);
+    },
   },
 };
 </script>
