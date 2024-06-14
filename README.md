@@ -1,35 +1,59 @@
-# vue-project
+# CHALLENGE
 
-This template should help get you started developing with Vue 3 in Vite.
+## 기술 스택
 
-## Recommended IDE Setup
+![Vue.js](https://img.shields.io/badge/vuejs-%2335495e.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+<br>
 
-## Customize configuration
+## 프로젝트 설치
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+Node.js 20.14.0 버전 이상에서 실행할 것을 권장합니다.
 
-## Project Setup
+챌린지 프로젝트를 Vue2로 구현하였습니다.
 
-```sh
-npm install
-```
+앱 실행을 위해 3000번 포트(Server)와 5173번 포트(Client)를 사용합니다.
 
-### Compile and Hot-Reload for Development
+(이미 3000번 혹은 5173번 포트가 사용 중이라면 제대로 실행되지 않을 수 있습니다.)
 
-```sh
-npm run dev
-```
+1. 프로젝트 클론
 
-### Compile and Minify for Production
+   ```bash
+   git clone https://github.com/thelisn/challenge-2410-gyumin.git
+   ```
 
-```sh
-npm run build
-```
+2. 디렉토리 변경
 
-### Lint with [ESLint](https://eslint.org/)
+   ```bash
+   cd challenge-2410-gyumin
+   ```
 
-```sh
-npm run lint
-```
+3. 패키지 설치
+
+   ```bash
+   npm install
+   ```
+
+4. 패키지 빌드
+
+   ```bash
+   npm run build
+   ```
+
+5. 프로젝트 실행
+
+   ```bash
+   npm run dev
+   ```
+
+6. [http://localhost:5173](http://localhost:5173) 접속
+
+<br>
+
+## 프로젝트 설명
+
+- 포스트 확인, 작성, 검색(제목 및 날짜)이 가능한 피드를 구현
+- Mocking DB 사용하여 데이터를 호출 및 생성 (json-server 라이브러리 사용)
+- 활용 라이브러리
+  - CSS: SCSS
+  - 상태 관리: Vuex
