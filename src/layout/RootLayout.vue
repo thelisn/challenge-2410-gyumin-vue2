@@ -17,12 +17,12 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .root-layout {
-  background-color: #FAFAFA;
+  @include autoMargin();
+  background-color: $BACKGROUND_COLOR;
   min-width: 384px;
   max-width: 448px;
-  margin: 0 auto;
   border-radius: 30px;
 }
 </style>

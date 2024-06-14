@@ -15,7 +15,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 p {
   overflow-wrap: break-word;
   white-space: pre-line;
@@ -23,13 +23,13 @@ p {
 
 .post-item {
   padding: 20px 16px;
-  border: solid 1px #9E9E9E;
+  border: solid 1px $gray5;
   border-radius: 16px;
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 12px;
-  background-color: #fff;
-  color: #263238;
+  background-color: $white;
+  color: $TEXT_COLOR;
 }
 
 .post-title {

@@ -5,7 +5,6 @@
 </template>
 
 <script>
-import "@/styles/index.css";
 import RootLayout from "@/layout/RootLayout.vue";
 
 export default {
