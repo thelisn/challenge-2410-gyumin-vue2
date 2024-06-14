@@ -117,9 +117,6 @@ export default {
   background-color: $gray0;
 }
 
-.searchbox-title label {
-  font-size: 0.875rem;
-}
 
 .searchbox-date {
   display: flex;
