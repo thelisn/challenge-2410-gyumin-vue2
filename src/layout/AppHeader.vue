@@ -5,7 +5,7 @@
   </header>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 header {
   padding-top: 48px;
   margin: 0 32px 8px;
@@ -18,12 +18,12 @@ h3 {
   font-size: 1.5rem;
   font-style: italic;
   font-weight: 400;
-  color: #37474f;
+  color: $blueGray8;
 }
 
 .date {
   font-size: 0.75rem;
   font-weight: 300;
-  color: gray;
+  color: $gray6;
 }
 </style>

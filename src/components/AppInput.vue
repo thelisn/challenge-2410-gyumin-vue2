@@ -1,6 +1,6 @@
 <template>
   <div class="input-component">
-    <label :for="id" :class="labelClass">
+    <label :for="id" :class="srOnly === 'true' && 'sr-only'">
       {{ labelText }}
     </label>
 
@@ -26,7 +26,7 @@ export default {
       type: String,
       required: true,
     },
-    labelClass: {
+    srOnly: {
       type: String,
       default: "",
     },
@@ -62,7 +62,11 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+.sr-only {
+  @include sr-only();
+}
+
 .input-component {
   display: flex;
   align-items: center;
@@ -75,11 +79,10 @@ label {
 }
 
 input {
+  @include autoMargin();
   font-size: 0.75rem;
-  box-sizing: border-box;
   height: 26px;
   flex-grow: 1;
-  margin: 0 auto;
   border: 1px solid #e0e0e0;
   border-radius: 4px;
   padding: 4px;

@@ -14,7 +14,7 @@
       <span class="search-label">기간 검색</span>
       <AppInput
         labelText="날짜 검색 시작 범위"
-        labelClass="a11y-hidden"
+        srOnly="true"
         type="date"
         role="searchbox"
         id="search-date-start"
@@ -23,7 +23,7 @@
       <span>~</span>
       <AppInput
         labelText="날짜 검색 종료 범위"
-        labelClass="a11y-hidden"
+        srOnly="true"
         type="date"
         role="searchbox"
         id="search-date-end"
@@ -107,19 +107,16 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .searchbox {
   display: flex;
   flex-direction: column;
   gap: 4px;
   padding: 8px;
-  border-bottom: 1px solid #E0E0E0;
-  background-color: #fafafa;
+  border-bottom: 1px solid $gray3;
+  background-color: $gray0;
 }
 
-.searchbox-title label {
-  font-size: 0.875rem;
-}
 
 .searchbox-date {
   display: flex;
@@ -147,14 +144,14 @@ export default {
 .searchbox-button button {
   padding: 4px 8px;
   border-radius: 6px;
-  border: 1px solid #64b5f6;
-  background-color: #fff;
-  color: #333;
+  border: 1px solid $blue3;
+  background-color: $white;
+  color: $TEXT_COLOR;
 }
 
 .searchbox-button button:hover {
-  background-color: #2196f3;
-  color: #fff;
+  background-color: $PRIMARY_COLOR;
+  color: $white;
   font-weight: 600;
 }
 </style>
