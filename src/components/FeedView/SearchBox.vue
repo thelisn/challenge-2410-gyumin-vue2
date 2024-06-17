@@ -1,7 +1,7 @@
 <template>
   <div class="top-sticky-container">
     <AppButton class="open-search-button" @click="handleOpenSearch">
-      {{ isSearchOpen ? "Close Search" : "Open Search" }}
+      {{ isSearchOpen ? "검색 닫기" : "검색" }}
     </AppButton>
 
     <div class="searchbox" v-if="isSearchOpen">
@@ -139,29 +139,29 @@ export default {
       background-color: $SECONDARY_COLOR;
     }
   }
-}
 
-.searchbox {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  padding: 8px;
-  border-bottom: 1px solid $gray3;
-  background-color: $gray0;
-
-  .searchbox-date {
+  .searchbox {
+    padding: 8px ;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     gap: 4px;
-    flex-shrink: 1;
+    border-bottom: 1px solid $gray3;
+    background-color: $gray0;
 
-    span {
-      font-size: 0.875rem;
-      padding-right: 2px;
-    }
+    .searchbox-date {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      flex-shrink: 1;
 
-    div {
-      flex-grow: 1;
+      span {
+        font-size: 0.875rem;
+        padding-right: 2px;
+      }
+
+      div {
+        flex-grow: 1;
+      }
     }
   }
 }
