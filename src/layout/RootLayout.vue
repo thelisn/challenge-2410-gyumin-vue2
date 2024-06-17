@@ -20,9 +20,8 @@ export default {
 <style lang="scss" scoped>
 .root-layout {
   @include autoMargin();
+  @include basicWidth(384px, 448px);
   background-color: $BACKGROUND_COLOR;
-  min-width: 384px;
-  max-width: 448px;
   border-radius: 30px;
 }
 </style>

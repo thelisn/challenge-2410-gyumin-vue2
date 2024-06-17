@@ -71,20 +71,20 @@ export default {
   display: flex;
   align-items: center;
   gap: 6px;
-}
 
-label {
-  font-size: 0.875rem;
-  font-weight: 400;
-}
+  label {
+    font-size: 0.875rem;
+    font-weight: 400;
+  }
 
-input {
-  @include autoMargin();
-  font-size: 0.75rem;
-  height: 26px;
-  flex-grow: 1;
-  border: 1px solid #e0e0e0;
-  border-radius: 4px;
-  padding: 4px;
+  input {
+    @include autoMargin();
+    font-size: 0.75rem;
+    height: 26px;
+    flex-grow: 1;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    padding: 4px;
+  }
 }
 </style>

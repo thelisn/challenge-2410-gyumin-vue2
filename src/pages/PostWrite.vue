@@ -20,8 +20,7 @@
         v-model="post.content"
       />
 
-      
-        <AppButton @click="handleCreateButton">포스트 작성</AppButton>
+      <AppButton @click="handleCreateButton">포스트 작성</AppButton>
     </form>
   </div>
 </template>
@@ -63,29 +62,28 @@ export default {
 <style lang="scss" scoped>
 .write-container {
   padding: 32px 40px;
-}
 
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 
-.write-container div {
-  gap: 8px;
-}
+    div {
+      gap: 8px;
+    }
 
-.write-container button {
-  @include autoMargin();
-  width: 40%;
-  margin-top: 32px;
-  margin-bottom: 32px;
-  height: 40px;
-  border-radius: 8px;
-  border: 1px solid #e0e0e0;
-  background-color: $PRIMARY_COLOR;
-  color: $white;
-  font-size: 16px;
-  font-weight: 600;
+    button {
+      @include autoMargin();
+      @include marginY(32px);
+      width: 40%;
+      height: 40px;
+      border-radius: 8px;
+      border: 1px solid #e0e0e0;
+      background-color: $PRIMARY_COLOR;
+      color: $white;
+      font-size: 16px;
+      font-weight: 600;
+    }
+  }
 }
 </style>

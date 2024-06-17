@@ -117,21 +117,20 @@ export default {
   background-color: $gray0;
 }
 
-
 .searchbox-date {
   display: flex;
   align-items: center;
   gap: 4px;
   flex-shrink: 1;
-}
 
-.searchbox-date span {
-  font-size: 0.875rem;
-  padding-right: 2px;
-}
+  span {
+    font-size: 0.875rem;
+    padding-right: 2px;
+  }
 
-.searchbox-date div {
-  flex-grow: 1;
+  div {
+    flex-grow: 1;
+  }
 }
 
 .searchbox-button {
@@ -139,19 +138,19 @@ export default {
   gap: 6px;
   justify-content: flex-end;
   margin-top: 8px;
-}
 
-.searchbox-button button {
-  padding: 4px 8px;
-  border-radius: 6px;
-  border: 1px solid $blue3;
-  background-color: $white;
-  color: $TEXT_COLOR;
-}
+  button {
+    padding: 4px 8px;
+    border-radius: 6px;
+    border: 1px solid $blue3;
+    background-color: $white;
+    color: $TEXT_COLOR;
 
-.searchbox-button button:hover {
-  background-color: $PRIMARY_COLOR;
-  color: $white;
-  font-weight: 600;
+    &:hover {
+      background-color: $PRIMARY_COLOR;
+      color: $white;
+      font-weight: 600;
+    }
+  }
 }
 </style>

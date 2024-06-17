@@ -5,6 +5,7 @@
         <AppButton class="open-search-button" @click="handleOpenSearch">
           {{ isSearchOpen ? "Close Search" : "Open Search" }}
         </AppButton>
+
         <SearchBox v-if="isSearchOpen" />
       </div>
 
@@ -53,29 +54,33 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.open-search-button {
-  padding: 8px;
-  width: 100%;
-  margin-top: 12px;
-  border-radius: 48px;
-  border: none;
-  font-size: 1rem;
-  font-weight: 500;
-  background-color: $PRIMARY_COLOR;
-  color: $white;
-}
+.feed-container {
+  padding: 0 24px;
 
-.open-search-button:hover {
-  background-color: $SECONDARY_COLOR;
-}
+  .top-sticky-container {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: $BACKGROUND_COLOR;
+    border-bottom-left-radius: 48px;
+    border-bottom-right-radius: 48px;
 
-.top-sticky-container {
-  position: sticky;
-  top: 0;
-  width: 100%;
-  background-color: $BACKGROUND_COLOR;
-  border-bottom-left-radius: 48px;
-  border-bottom-right-radius: 48px;
+    .open-search-button {
+      padding: 8px;
+      width: 100%;
+      margin-top: 12px;
+      border-radius: 48px;
+      border: none;
+      font-size: 1rem;
+      font-weight: 500;
+      background-color: $PRIMARY_COLOR;
+      color: $white;
+
+      &:hover {
+        background-color: $SECONDARY_COLOR;
+      }
+    }
+  }
 }
 
 .bottom-sticky-container {
@@ -85,25 +90,21 @@ export default {
   background-color: $white;
   border-top-left-radius: 48px;
   border-top-right-radius: 48px;
-}
 
-.new-post-button {
-  background-color: $PRIMARY_COLOR;
-  color: $white;
-  text-align: center;
-  padding: 12px;
-  border-radius: 30px;
-  font-size: 1.25rem;
-  font-weight: 600;
-  border: none;
-  width: 100%;
-}
+  .new-post-button {
+    background-color: $PRIMARY_COLOR;
+    color: $white;
+    text-align: center;
+    padding: 12px;
+    border-radius: 30px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    border: none;
+    width: 100%;
 
-.new-post-button:hover {
-  background-color: $SECONDARY_COLOR;
-}
-
-.feed-container {
-  padding: 0 24px;
+    &:hover {
+      background-color: $SECONDARY_COLOR;
+    }
+  }
 }
 </style>
