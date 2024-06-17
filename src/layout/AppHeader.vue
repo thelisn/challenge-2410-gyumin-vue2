@@ -12,18 +12,19 @@ header {
   display: flex;
   flex-direction: column;
   gap: 6px;
+
+  h3 {
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: 400;
+    color: $blueGray8;
+  }
+  
+  .date {
+    font-size: 0.75rem;
+    font-weight: 300;
+    color: $gray6;
+  }
 }
 
-h3 {
-  font-size: 1.5rem;
-  font-style: italic;
-  font-weight: 400;
-  color: $blueGray8;
-}
-
-.date {
-  font-size: 0.75rem;
-  font-weight: 300;
-  color: $gray6;
-}
 </style>

@@ -1,13 +1,13 @@
 <template>
   <div class="input-component">
-    <label :for="id" :class="srOnly === 'true' && 'sr-only'">
+    <label :for="uid" :class="srOnly === 'true' && 'sr-only'">
       {{ labelText }}
     </label>
 
     <input
       :type="type"
       :role="role"
-      :id="id"
+      :id="uid"
       :placeholder="placeholder"
       :value="value"
       :max="type === 'date' ? '9999-12-31' : null"
@@ -17,6 +17,8 @@
 </template>
 
 <script>
+import { v4 } from "uuid";
+
 export default {
   name: "AppInput",
 
@@ -40,10 +42,6 @@ export default {
       type: String,
       default: "input",
     },
-    id: {
-      type: String,
-      required: true,
-    },
     placeholder: {
       type: String,
       default: "",
@@ -52,6 +50,18 @@ export default {
       type: String,
       default: "",
     },
+  },
+
+  data() {
+    return {
+      uniqueId: `input-${v4()}`,
+    };
+  },
+
+  computed: {
+    uid() {
+      return this.uniqueId;
+    }
   },
 
   methods: {
@@ -71,20 +81,21 @@ export default {
   display: flex;
   align-items: center;
   gap: 6px;
-}
 
-label {
-  font-size: 0.875rem;
-  font-weight: 400;
-}
+  label {
+    font-size: 0.875rem;
+    font-weight: 400;
+  }
 
-input {
-  @include autoMargin();
-  font-size: 0.75rem;
-  height: 26px;
-  flex-grow: 1;
-  border: 1px solid #e0e0e0;
-  border-radius: 4px;
-  padding: 4px;
+  input {
+    @include autoMargin();
+    font-size: 0.75rem;
+    height: 26px;
+    flex-grow: 1;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    padding: 4px;
+  }
 }
 </style>
+
