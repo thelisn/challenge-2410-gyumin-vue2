@@ -3,19 +3,16 @@
     <form>
       <AppInput
         labelText="제목"
-        id="post-title"
         placeholder="제목을 입력해주세요."
         v-model="post.title"
       />
       <AppInput
         labelText="날짜"
         type="date"
-        id="post-date"
         v-model="post.date"
       />
       <AppTextarea
         labelText="내용"
-        id="post-content"
         placeholder="내용을 입력해주세요."
         v-model="post.content"
       />

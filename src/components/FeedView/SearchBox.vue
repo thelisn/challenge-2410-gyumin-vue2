@@ -9,7 +9,6 @@
         <AppInput
           labelText="제목 검색"
           role="searchbox"
-          id="search-title"
           placeholder="검색어를 입력하세요."
           v-model="searchTerm"
         />
@@ -22,7 +21,6 @@
           srOnly="true"
           type="date"
           role="searchbox"
-          id="search-date-start"
           v-model="startDate"
         />
         <span>~</span>
@@ -31,7 +29,6 @@
           srOnly="true"
           type="date"
           role="searchbox"
-          id="search-date-end"
           v-model="endDate"
         />
       </div>

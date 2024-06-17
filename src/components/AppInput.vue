@@ -1,13 +1,13 @@
 <template>
   <div class="input-component">
-    <label :for="id" :class="srOnly === 'true' && 'sr-only'">
+    <label :for="uid" :class="srOnly === 'true' && 'sr-only'">
       {{ labelText }}
     </label>
 
     <input
       :type="type"
       :role="role"
-      :id="id"
+      :id="uid"
       :placeholder="placeholder"
       :value="value"
       :max="type === 'date' ? '9999-12-31' : null"
@@ -40,10 +40,6 @@ export default {
       type: String,
       default: "input",
     },
-    id: {
-      type: String,
-      required: true,
-    },
     placeholder: {
       type: String,
       default: "",
@@ -52,6 +48,18 @@ export default {
       type: String,
       default: "",
     },
+  },
+
+  data() {
+    return {
+      uniqueId: `input-${Math.random().toString(36).slice(2, 9)}`,
+    };
+  },
+
+  computed: {
+    uid() {
+      return this.uniqueId;
+    }
   },
 
   methods: {
@@ -88,3 +96,4 @@ export default {
   }
 }
 </style>
+

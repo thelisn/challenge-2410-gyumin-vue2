@@ -1,11 +1,11 @@
 <template>
   <div class="textarea-component">
-    <label :for="id">
+    <label :for="uid">
       {{ labelText }}
     </label>
 
     <textarea
-      :id="id"
+      :id="uid"
       :placeholder="placeholder"
       :role="role"
       :value="value"
@@ -29,10 +29,6 @@ export default {
       type: String,
       default: "input",
     },
-    id: {
-      type: String,
-      required: true,
-    },
     placeholder: {
       type: String,
       default: "",
@@ -40,6 +36,18 @@ export default {
     value: {
       type: String,
       default: "",
+    },
+  },
+
+  data() {
+    return {
+      uniqueId: `input-${Math.random().toString(36).slice(2, 9)}`,
+    };
+  },
+
+  computed: {
+    uid() {
+      return this.uniqueId;
     },
   },
 
