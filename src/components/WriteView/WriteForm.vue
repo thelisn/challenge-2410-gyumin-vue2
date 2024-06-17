@@ -29,7 +29,7 @@ import AppTextarea from "@/components/AppTextarea.vue";
 import AppButton from "@/components/AppButton.vue";
 
 export default {
-  name: "PostWrite",
+  name: "WriteForm",
   components: {
     AppInput,
     AppTextarea,
