@@ -15,6 +15,8 @@
 </template>
 
 <script>
+import { v4 } from "uuid";
+
 export default {
   name: "AppTextarea",
 
@@ -41,7 +43,7 @@ export default {
 
   data() {
     return {
-      uniqueId: `input-${Math.random().toString(36).slice(2, 9)}`,
+      uniqueId: `input-${v4()}`,
     };
   },
 
